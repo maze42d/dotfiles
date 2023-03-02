@@ -15,8 +15,11 @@ $rust\
 $docker_context\
 $time\
 $memory_usage\
+$git_branch\
+$git_status\
 $line_break\
-$character
+$character\
+$character\
 """
 
 # Disable the blank line at the start of the prompt
