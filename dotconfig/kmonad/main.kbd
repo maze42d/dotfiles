@@ -1,0 +1,101 @@
+;; deflayer=default
+;; split_at=" desc: "
+(defcfg
+  ;; For Linux
+  input  (device-file "/dev/input/by-id/usb-qmkbuilder_keyboard-event-kbd")
+  output (uinput-sink "My KMonad output"
+    "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
+;;  cmp-seq ralt    ;; Set the compose key to `RightAlt'
+;;  cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
+
+  allow-cmd true
+)
+
+
+(defsrc
+  q     w     e     r     t     y      u     i     o     p
+  a     s     d     f     g     h      j     k     l     ;
+  z     x     c     v     b     n      m     ,     .     /
+)
+
+
+(defalias
+  ws1 M-1           ;; desc: workspace 1
+  ws2 M-2           ;; desc: workspace 2
+  ws3 M-3           ;; desc: workspace 3
+  ws4 M-4           ;; desc: workspace 4
+  ws5 M-5           ;; desc: workspace 5
+  ws6 M-6           ;; desc: workspace 6
+  wsm M-S-p         ;; desc: Move workspace
+  kill M-x          ;; desc: kill
+  br M-b            ;; desc: vivaldi
+  lyft (cmd-button "/home/maze/lyft.sh") ;; desc: lyft
+
+  layersLog     (cmd-button "/home/maze/.bun/bin/bun /home/maze/.config/kmonad/kmonad-layer-log/index.js set layerswitcher")
+  layersSwitch  (layer-next layerswitcher)
+  layers        (tap-macro @layersSwitch @layersLog) ;; desc: Layers
+
+  lDefLog       (cmd-button "/home/maze/.bun/bin/bun /home/maze/.config/kmonad/kmonad-layer-log/index.js set default")
+  lDefSwitch    (layer-switch default)
+  lDef          (tap-macro @lDefSwitch @lDefLog) ;; desc: Default
+
+  lNumLog       (cmd-button "/home/maze/.bun/bin/bun /home/maze/.config/kmonad/kmonad-layer-log/index.js set num")
+  lNumSwitch    (layer-switch num)
+  lNum          (tap-macro @lNumSwitch @lNumLog) ;; desc: Num
+
+  lWebLog       (cmd-button "/home/maze/.bun/bin/bun /home/maze/.config/kmonad/kmonad-layer-log/index.js set web")
+  lWebSwitch    (layer-switch web)
+  lWeb          (tap-macro @lWebSwitch @lWebLog) ;; desc: Web
+
+  lMinecraftLog       (cmd-button "/home/maze/.bun/bin/bun /home/maze/.config/kmonad/kmonad-layer-log/index.js set minecraft")
+  lMinecraftSwitch    (layer-switch minecraft)
+  lMc                 (tap-macro @lMinecraftSwitch @lMinecraftLog) ;; desc: Minecraft
+
+  lTerrariaLog       (cmd-button "/home/maze/.bun/bin/bun /home/maze/.config/kmonad/kmonad-layer-log/index.js set terraria")
+  lTerrariaSwitch    (layer-switch terraria)
+  lTerr              (tap-macro @lTerrariaSwitch @lTerrariaLog) ;; desc: Terraria
+
+  menu C-e  ;; desc: Menu
+  tabP C-A-1 ;; desc: Previous tab
+  tabN C-A-2 ;; desc: Next tab
+  tabView C-S-x ;; desc: Hide tab bar
+
+  picom (cmd-button "killall picom")
+)
+
+
+(deflayer default
+    @layers @lyft   _       _      _       _        _      _      _      ~
+    lsft    @kill   @br     @picom _       _        @wsm   _      up     `
+    @ws1    @ws2    @ws3    @ws4   @ws5    @ws6     _      left   down   right
+)
+
+(deflayer layerswitcher
+  @lDef        @lWeb       @lNum        @lDef       @lDef        @lDef        @lDef         @lDef         @lDef         @lDef    
+  @lMc         @lTerr      @lDef        @lDef       @lDef        @lDef        @lDef         @lDef         @lDef         @lDef    
+  @lDef        @lDef       @lDef        @lDef       @lDef        @lDef        @lDef         @lDef         @lDef         @lDef    
+)
+
+(deflayer num
+    @layers   _       _       _      _      _      bspc 7   8   9
+    _         _       _       _      _      _      ret  4   5   6
+    @ws1      @ws2    @ws3    @ws4   @ws5   @ws6   0    1   2   3
+)
+
+(deflayer web
+    @layers _       _       _      @lNum   _       _         _      _      ~
+    lsft    @menu   @tabP   @tabN  _       _       k         spc    up     ret
+    @ws1    @ws2    @ws3    @ws4   @ws5    @ws6    @tabView  left   down   right
+)
+
+(deflayer minecraft
+    @layers @lyft   _       _      _       _        _      _      _      ~
+    lsft    @kill   @br     _      _       _       k      esc      up   e
+    @ws1    @ws2    @ws3    @ws4   @ws5    @ws6    _      left   down   right
+)
+
+(deflayer terraria
+    @layers  @ws1    @ws4   _      w       _   _      _    _    5
+    b        _       esc    a      s       d   _      _    _    4
+    4        5       r      _      _       f   spc    lsft _    3
+)
