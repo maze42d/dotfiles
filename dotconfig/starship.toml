@@ -19,7 +19,6 @@ $git_branch\
 $git_status\
 $line_break\
 $character\
-$character\
 """
 
 # Disable the blank line at the start of the prompt
