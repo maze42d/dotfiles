@@ -15,7 +15,7 @@ dotconfig/*
 !*dotconfig/pulse/
 !*dotconfig/solaar/
 !*dotconfig/solvespace/
-!*dotconfig/starship.toml/
+!*dotconfig/starship.toml
 !*dotconfig/sway/
 !*dotconfig/trashrc/
 !*dotconfig/vkBasalt/
