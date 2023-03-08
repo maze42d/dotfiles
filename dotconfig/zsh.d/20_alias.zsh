@@ -1,7 +1,7 @@
 alias d="docker-compose"
 alias l="ls -lah --color"
 #alias v="nvim"
-alias c="cd \$(history -100 | grep '^ [[:digit:]]\+ \+cd' | awk -F 'cd' '{print $2}' | tail -n 1)"
+alias c="cd \$(history -100 | grep '^ [[:digit:]]\+ \+cd' | awk -F 'cd' '{print \$2}' | tail -n 1)"
 alias vivaldi-wayland="vivaldi-stable --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias use="doas nano /etc/portage/package.use/_use"
 alias accept="doas nano /etc/portage/package.accept_keywords"

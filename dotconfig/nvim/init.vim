@@ -5,19 +5,18 @@
 " base ----------------------- {{{
 
 set nocompatible
-set undofile
 filetype on
 filetype plugin on
 filetype indent on
 syntax on
 set number relativenumber
-" set cursorline
+set cursorline
 " set cursorcolumn
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set scrolloff=5
-set nowrap
+" set nowrap
 set incsearch
 set ignorecase
 set smartcase
@@ -25,7 +24,17 @@ set history=1000
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-set foldenable 
+set nofoldenable
+
+if !isdirectory($HOME."/.vim")
+  call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+  call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
+
 if exists("g:neovide")
   set mouse
   set guifont=Source\ Code\ Pro:h11
@@ -64,18 +73,13 @@ Plug 'skammer/vim-css-color'
 Plug 'turbio/bracey.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'alvan/vim-closetag'
-" lsp
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-"Plug 'psliwka/vim-smoothie'
+
 call plug#end()
 
 :colorscheme gruvbox 
 "  }}}
 
-" maps -------------------------------------------{{{
+" keymaps -------------------------------------------{{{
 " undo
 map! <C-z> :u<CR>
 "paste
@@ -108,6 +112,11 @@ noremap <c-right> <c-w><
 nnoremap 33 :NERDTreeToggle<cr>
 nnoremap 44 :UndotreeToggle<cr>
 nnoremap 11 :Startify<cr>
+
+" coc accept
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " }}}
 
