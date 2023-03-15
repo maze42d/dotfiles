@@ -1,0 +1,59 @@
+/* hide tabs */
+#TabsToolbar {
+visibility: hidden;
+height: 0px;
+}
+
+/* smaller sideberry badge */
+#sidebar-switcher-target {
+transform: scale(0.6);
+position: relative;
+left: -24px;
+}
+#sidebar-header {
+  height: 24px;
+  background-color: black;
+}
+  
+/* navbar on the bottom (might break? inverts the layout of root) */
+/* TODO: fixme: show search results
+body {
+-moz-box-direction: reverse !important;
+  }
+*/
+#navigator-toolbox {
+  border: none !important;
+}
+
+/* urlbar not round, no border, spans the entire navbar height */
+#urlbar-container {
+padding: 0 !important;
+}
+#urlbar-background, #searchbar {
+  border: none !important;
+  border-radius: 0 !important;
+}
+#urlbar-background {
+  min-height: 50px;
+  top: -8px;
+}
+
+#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background, #searchbar:focus-within {
+outline: none !important;
+}
+
+/* remove sidebar splitter next to sideberry  */
+.sidebar-splitter {
+/* display: none !important; */
+width: 2px !important;
+}
+
+/* NOTE: forces pinned extentions into the extention menu? */
+/* hides back and forwards arrows if not active NOTE: disable rule if reordering taskbar 
+.toolbarbutton-1[disabled="true"] {
+  visibility: collapse;
+} */
+
+#sidebar-close {
+  display: none !important;
+}
