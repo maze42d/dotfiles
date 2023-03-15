@@ -1,6 +1,8 @@
 #!/bin/bash
+echo "to do later" && exit
+
 PROFILE=$USER
-echo $PROFILE
+#echo $PROFILE
 firefox -CreateProfile "$PROFILE"
 
 cd
