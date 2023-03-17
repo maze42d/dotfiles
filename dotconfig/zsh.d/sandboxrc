@@ -1,9 +1,10 @@
 # // DEPENDS: sandboxd https://github.com/benvan/sandboxd
 
-# nvm
-sandbox_init_nvm(){
-  /usr/share/nvm/init-nvm.sh
-}
-
-sandbox_hook nvm node
-sandbox_hook nvm nodemon
+# # nvm
+# sandbox_init_nvm(){
+#   /usr/share/nvm/init-nvm.sh
+# }
+# 
+# sandbox_hook nvm nvm
+# sandbox_hook nvm node
+# sandbox_hook nvm nodemon
