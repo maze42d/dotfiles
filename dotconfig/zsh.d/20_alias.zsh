@@ -37,6 +37,11 @@ alias :qa="killall alacritty"
 alias slepIn5M="xset s 300 300"
 alias slepNever="xset s off"
 alias slep="xset dpms force suspend"
+alias ga="git add"
+alias gaa="git add -A"
+alias gc="git commit -m"
+alias gp="git push"
+alias gd="git diff"
 
 alias -s js=node
 alias -s ts=nvim
