@@ -34,6 +34,9 @@ alias pacman-outplay="doas rm -f /var/lib/pacman/db.lck"
 alias ayy="yay"
 alias :q="exit"
 alias :qa="killall alacritty"
+alias slepIn5M="xset s 300 300"
+alias slepNever="xset s off"
+alias slep="xset dpms force suspend"
 
 alias -s js=node
 alias -s ts=nvim
