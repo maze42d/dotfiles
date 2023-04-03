@@ -42,6 +42,7 @@ alias gaa="git add -A"
 alias gc="git commit -m"
 alias gp="git push"
 alias gd="git diff"
+alias gs="git status"
 
 alias -s js=node
 alias -s ts=nvim
