@@ -225,7 +225,7 @@ exec_always --no-startup-id noisetorch -i
 exec_always --no-startup-id deadd-notification-center
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-bindsym $mod+b exec vivaldi-stable &>/dev/null
+bindsym $mod+b exec firefox &>/dev/null
 bindsym $mod+e exec thunar &>/dev/null
 bindsym $mod+q exec wlogout &>/dev/null
 bindsym $mod+m exec thunderbird &>/dev/null
