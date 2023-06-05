@@ -1,18 +1,21 @@
 alias d="docker-compose"
-alias l="ls -lah --color"
+alias l="exa --all --long --octal-permissions --time-style=long-iso  --git --group --color-scale  --header --icons"
+alias ltree="exa --all --long --octal-permissions --time-style=long-iso  --git --group --color-scale  --header --icons --tree -L 3"
+alias ddg="ddgr"
 #alias v="nvim"
+alias t="taskwarrior-tui"
+alias ta="task add"
+alias td="task done"
 alias c="cd \$(history -100 | grep '^ [[:digit:]]\+ \+cd' | awk -F 'cd' '{print \$2}' | tail -n 1)"
 alias vivaldi-wayland="vivaldi-stable --enable-features=UseOzonePlatform --ozone-platform=wayland"
-alias use="doas nano /etc/portage/package.use/_use"
-alias accept="doas nano /etc/portage/package.accept_keywords"
+alias accept=""
 #alias emerge="doas emerge --ask --quiet-build"
-alias emerge="doas emerge"
 alias elog="tail -f /var/log/emerge.log"
 alias eupdate="doas emerge -avuDN --quiet-build --keep-going @world"
 alias wcount="wc -w"
 alias cz="setxkbmap -layout cz -variant qwerty"
 alias us="setxkbmap us"
-alias rm="rmtrash"
+#alias rm="rmtrash"
 #alias paldopici="rm"
 #alias rm="echo ne"
 #alias reboot="loginctl reboot"
@@ -43,6 +46,12 @@ alias gc="git commit -m"
 alias gp="git push"
 alias gd="git diff"
 alias gs="git status"
+alias emerge="doas emerge"
+alias euse="doas nvim /etc/portage/package.use"
+alias eaccept="doas nvim /etc/portage/package.accept_keywords"
+alias eunmask="doas nvim /etc/portage/package.unmask"
+alias eoverlayadd="doas eselect repository enable"
+alias esync="doas emaint sync -a"
 
 alias -s js=node
 alias -s ts=nvim
@@ -77,3 +86,14 @@ npm() {
     npm "$@"
 }
 
+# precmd () {  ## TUI borked                                                                                                                                                                                                      
+#     exec 2>&- >&-
+#     lastLine=$(tail -1 /dev/shm/zsh.lastStdout) 
+#     lastOut=$(cat /dev/shm/zsh.lastStdout) 
+#     sleep 0.1   # TODO: synchronize better
+#     exec > /dev/tty 2>&1
+# }
+# 
+# preexec() {
+#     exec > >(tee /dev/shm/zsh.lastStdout&)
+# }

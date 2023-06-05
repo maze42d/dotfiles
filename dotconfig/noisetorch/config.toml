@@ -3,5 +3,5 @@ DisplayMonitorSources = false
 EnableUpdates = true
 FilterInput = true
 FilterOutput = false
-LastUsedInput = "alsa_input.pci-0000_05_00.6.analog-stereo"
+LastUsedInput = "alsa_input.usb-ARTURIA_MiniFuse_1_8831400345061105-00.Direct__hw_M1__source"
 LastUsedOutput = ""

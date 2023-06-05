@@ -3,6 +3,10 @@
 visibility: hidden;
 height: 0px;
 }
+/* hide titlebar (ff113) */
+#titlebar {
+  display: none;
+}
 
 /* smaller sideberry badge */
 #sidebar-switcher-target {

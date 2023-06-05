@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Screenshot region | save
+Exec=sh -c "grim -g '\\$(slurp)' /home/maze/screenshots/\\$(date +'_grim.png')"

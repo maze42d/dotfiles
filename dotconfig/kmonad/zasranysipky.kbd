@@ -1,0 +1,19 @@
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-SK61L_SK61L-if01-event-kbd")
+  output (uinput-sink "gib sipky zmrde"
+    "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
+  fallthrough true
+  allow-cmd false
+)
+
+(defsrc
+  ralt rshft cmp rctrl
+)
+
+(defalias
+)
+
+(deflayer default
+  down up left right
+)
+

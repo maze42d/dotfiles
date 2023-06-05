@@ -67,4 +67,3 @@ bindkey ';5C' forward-word
 bindkey '^[[3~' delete-char
 
 bindkey '^I' expand-or-complete-or-list-files # see 10_tab.zsh
-#source $HOME/.config/zsh.d/zsh-interactive-cd.plugin.zsh

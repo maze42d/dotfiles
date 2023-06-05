@@ -10,6 +10,7 @@ filetype plugin on
 filetype indent on
 syntax on
 set number relativenumber
+set numberwidth=3
 set cursorline
 " set cursorcolumn
 set tabstop=2
@@ -26,6 +27,13 @@ set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set nofoldenable
 
+" fullcolor terminal
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 if !isdirectory($HOME."/.vim")
   call mkdir($HOME."/.vim", "", 0770)
 endif
@@ -37,7 +45,7 @@ set undofile
 
 if exists("g:neovide")
   set mouse
-  set guifont=Source\ Code\ Pro:h11
+  set guifont=Source\ Code\ Pro:h12
   let g:neovide_refresh_rate = 60
   let g:neovide_refresh_rate_idle = 5
   let g:neovide_cursor_animation_length=0.13
@@ -59,7 +67,7 @@ Plug 'tpope/vim-surround'
 "Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
@@ -73,6 +81,8 @@ Plug 'skammer/vim-css-color'
 Plug 'turbio/bracey.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'alvan/vim-closetag'
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
+Plug 'elkowar/yuck.vim'
 
 call plug#end()
 
@@ -144,7 +154,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
 let g:startify_bookmarks = systemlist("cut -sd' ' -f 2- ~/.NERDTreeBookmarks")
 
 let g:startify_custom_header =
-  \ startify#pad(split(system('neofetch --stdout'), '\n'))
+  \ startify#pad(split(system('echo ""'), '\n'))
 
 
 " }}}
