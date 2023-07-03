@@ -2,13 +2,13 @@
 "layer": "top",
 "output": "HDMI-A-1",
 "position": "top",
-"modules-left":   ["wlr/workspaces", "tray", "hyprland/window"],
+"modules-left":   ["sway/workspaces", "tray", "sway/window"],
 "modules-center": [],
-"modules-right":  ["disk", "memory", "cpu", "temperature", "network", "wireplumber", "clock"],
+"modules-right":  ["cpu", "memory", "disk", "custom/cputemp", "custom/gputemp", "custom/fanspeed", "wireplumber", "clock"],
 "height": "22px",
 
-"wlr/workspaces": {
-     "format": "{name}",
+"sway/workspaces": {
+     "format": "{icon}",
      "on-click": "activate",
      "all-outputs": true,
      "sort-by-name": true,
@@ -74,8 +74,8 @@
     "icon-size": 14,
     "spacing": 10
 },
-"hyprland/window": {
-    "format": "«  {}  »",
+"sway/window": {
+    "format": "[ {} ]",
     "separate-outputs": true
 },
 "hyprland/language": {
@@ -83,8 +83,8 @@
     "keyboard-name": "sk61l-sk61l-consumer-control"
 },
 "cpu": {
-    "interval": 2,
-    "format": "{load} | {avg_frequency}GHz  {icon0} {icon2} {icon4} {icon6} {icon8} {icon10} {icon12} {icon14}",
+    "interval": 5,
+    "format": "{avg_frequency}GHz {load} {icon0} {icon4} {icon8} {icon12} {icon14}",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
 },
  "temperature": {
@@ -100,5 +100,21 @@
     "interval": 30,
     "format": "{used}/{total}",
     "path": "/"
+},
+// https://github.com/mt-inside/polybar-lmsensors
+"custom/cputemp": {
+    "interval": 3,
+    "format": "CPU {}°C",
+    "exec": "~/github/polybar-lmsensors_linux_amd64 \"legion_hwmon-isa-0000/CPU Temperature\"" 
+},
+"custom/gputemp": {
+    "interval": 6,
+    "format": "GPU {}°C",
+    "exec": "~/github/polybar-lmsensors_linux_amd64 \"legion_hwmon-isa-0000/GPU Temperature\""
+},
+"custom/fanspeed": {
+    "interval": 2,
+    "format": "{}",
+    "exec": "echo $(~/github/polybar-lmsensors_linux_amd64 \"legion_hwmon-isa-0000/Fan 1\") RPM $(~/github/polybar-lmsensors_linux_amd64 \"legion_hwmon-isa-0000/Fan 2\") RPM"
 }
 }

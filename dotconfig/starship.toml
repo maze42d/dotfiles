@@ -106,7 +106,8 @@ format = '[ ♥ $time ]($style)'
 
 [hostname]
 ssh_only = false
-format = "[$hostname](bold red)"
+ssh_symbol = ' \[remote\] '
+format = "[$hostname](bold red)[$ssh_symbol](green)"
 disabled = false
 
 [line_break]

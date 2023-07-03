@@ -21,6 +21,7 @@ dotconfig/*
 !*dotconfig/vkBasalt/
 !*dotconfig/waybar/
 !*dotconfig/zsh.d/
+!*dotconfig/kanata/
 
 **/logs/**
 **/profiler**

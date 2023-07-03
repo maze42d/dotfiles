@@ -37,6 +37,7 @@ alias pacman-outplay="doas rm -f /var/lib/pacman/db.lck"
 alias ayy="yay"
 alias :q="exit"
 alias :qa="killall alacritty"
+alias :qa!="shutdown 0"
 alias slepIn5M="xset s 300 300"
 alias slepNever="xset s off"
 alias slep="xset dpms force suspend"
@@ -52,6 +53,8 @@ alias eaccept="doas nvim /etc/portage/package.accept_keywords"
 alias eunmask="doas nvim /etc/portage/package.unmask"
 alias eoverlayadd="doas eselect repository enable"
 alias esync="doas emaint sync -a"
+alias cputurbooff='echo "0" | doas tee /sys/devices/system/cpu/cpufreq/boost'
+alias cputurboon='echo "1" | doas tee /sys/devices/system/cpu/cpufreq/boost'
 
 alias -s js=node
 alias -s ts=nvim

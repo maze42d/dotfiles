@@ -1,0 +1,17 @@
+(defcfg
+  linux-dev /dev/input/by-id/usb-SK61L_SK61L-if01-event-kbd
+  process-unmapped-keys yes
+  linux-continue-if-no-devs-found no
+)
+
+(defsrc
+  ralt rshft cmp rctrl
+)
+
+(defalias
+)
+
+(deflayer default
+  down up left rght
+)
+
