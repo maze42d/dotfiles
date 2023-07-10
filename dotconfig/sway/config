@@ -10,9 +10,10 @@ gaps inner 5
 gaps outer 0
 
 
-input 1133:49166:Logitech_USB-PS\/2_Optical_Mouse {
+input "1133:49166:Logitech_USB-PS/2_Optical_Mouse" {
     accel_profile flat
     pointer_accel 1
+    calibration_matrix 2 0 0 0 2 0
 }
 
 
@@ -123,6 +124,8 @@ exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-ag
 
 bindsym $mod+b exec firefox-bin &>/dev/null
 bindsym $mod+e exec thunar &>/dev/null
+bindsym $mod+c exec zenity --info --text "$(hyprpicker)"
+
 
 for_window [title=".*"] border pixel 2
 smart_borders on

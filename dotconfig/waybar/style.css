@@ -41,7 +41,7 @@
 
 #workspaces button.active {
   background: #555;
-  color: white;
+  color: orange;
   border: 1px solid white;
 }
 
@@ -51,7 +51,9 @@
 #workspaces label {
   padding: 0;
 }
-
+#workspaces button.focused {
+  border: 1px solid #aaa;
+}
 #custom-cap-left,
 #custom-cap-right {
   color: @bgcolor;
