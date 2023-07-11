@@ -61,3 +61,33 @@ width: 2px !important;
 #sidebar-close {
   display: none !important;
 }
+
+/* smaller bookmark items */
+
+.bookmark-item, [data-l10n-id="places-open-all-bookmarks"], [data-l10n-id="places-open-all-in-tabs"], [data-l10n-id="places-open-in-container-tab"], .openintabs-menuitem { /* useless/undesired selectors? */
+  font-size: 12px !important;
+}
+
+.bookmark-item image {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+#PlacesChevron { /* stretches toolbar if visible otherwise */
+  height: 18px !important;
+}
+
+menuitem.bookmark-item, .bookmark-item, .openintabs-menuitem { /* NOTE: .bookmark-item targets wrapped folders */
+  margin: 2px !important;
+  padding: 2px !important;
+  padding-left: 6px !important; /* looks less wrong */
+  min-height: 12px !important;
+}
+
+/* self-described */
+.bookmarks-actions-menuseparator {
+  visibility: hidden !important;
+  height: 4px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

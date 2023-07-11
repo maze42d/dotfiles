@@ -117,7 +117,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-exec_always waybar
+exec waybar
 exec_always gnome-keyring-daemon -r -d
 exec_always dbus-update-activation-environment --all
 exec_always --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 
