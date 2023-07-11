@@ -3,6 +3,11 @@
 firefox_binary="firefox-bin"
 ipc_binary=swaymsg
 
+if [[ -z $1 ]]; then
+  echo "Usage: $0 <profile> <workspace>"
+  exit 1
+fi
+
 firefox_profile=$1
 workspace=$2
 
@@ -20,4 +25,4 @@ until $ipc_binary -t get_tree | grep "\"pid\": $PID" > /dev/null #wait till wind
 done
 $command
 disown
-exit
+exit 0
