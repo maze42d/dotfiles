@@ -1,7 +1,12 @@
 #!/bin/bash
 
 firefox_binary="firefox-bin"
-ipc_binary=swaymsg
+
+if pidof sway; then
+  ipc_binary=swaymsg
+  else
+    ipc_binary=i3-msg
+fi
 
 if [[ -z $1 ]]; then
   echo "Usage: $0 <profile> <workspace>"
