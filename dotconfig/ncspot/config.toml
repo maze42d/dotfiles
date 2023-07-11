@@ -1,0 +1,7 @@
+use_nerdfont = true 
+flip_status_indicators = true
+volnorm = true
+notify = true
+repeat = "playlist"
+playback_state = "Playing"
+

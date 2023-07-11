@@ -4,7 +4,9 @@ dotconfig/*
 !*dotconfig/easyeffects/
 !*dotconfig/hypr/
 !*dotconfig/i3/
+!*dotconfig/kanata/
 !*dotconfig/kmonad/
+!*dotconfig/ncspot/config.toml
 !*dotconfig/noisetorch/
 !*dotconfig/nvim/
 !*dotconfig/obs-studio/
@@ -21,7 +23,6 @@ dotconfig/*
 !*dotconfig/vkBasalt/
 !*dotconfig/waybar/
 !*dotconfig/zsh.d/
-!*dotconfig/kanata/
 
 **/logs/**
 **/profiler**

@@ -105,14 +105,14 @@ dynamic_title: true
 # Font configuration
 font:
   # Normal (roman) font face
-  #normal:
+  normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    family: RobotoMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
