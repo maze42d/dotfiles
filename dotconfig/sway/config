@@ -16,6 +16,7 @@ input "1133:49166:Logitech_USB-PS/2_Optical_Mouse" {
     calibration_matrix 2 0 0 0 2 0
 }
 
+#assign [app_id=firefox] ws3
 
 # Pulse volume bind
 set $refresh_i3status killall -SIGUSR1 i3status
