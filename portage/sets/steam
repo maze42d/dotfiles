@@ -1,0 +1,17 @@
+# Steam
+app-arch/tar
+app-shells/bash
+games-util/game-device-udev-rules
+net-misc/curl
+sys-devel/gcc[multilib]
+sys-libs/glibc[multilib]
+virtual/opengl[abi_x86_32]
+x11-libs/libX11[abi_x86_32]
+x11-libs/libXau[abi_x86_32]
+x11-libs/libxcb[abi_x86_32]
+x11-libs/libXdmcp[abi_x86_32]
+# Game Device Udev Rules
+acct-group/input
+sys-apps/systemd[acl]
+virtual/udev
+virtual/pkgconfig

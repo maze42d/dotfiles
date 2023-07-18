@@ -1,0 +1,5 @@
+--- a/lib/_emerge/MergeListItem.py
++++ b/lib/_emerge/MergeListItem.py
+@@ -61,1 +61,1 @@
+-        action_desc = "Emerging"
++        action_desc = "Emerging  "

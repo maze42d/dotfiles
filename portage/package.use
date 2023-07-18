@@ -1,0 +1,262 @@
+## x
+app-emulation/wine-staging X
+app-emulation/winetricks gtk
+media-libs/libepoxy X
+media-libs/libglvnd X
+media-libs/mesa vaapi vdpau vulkan X
+media-libs/vulkan-loader X
+sys-apps/dbus X
+sys-apps/flatpak X
+sys-apps/xdg-desktop-portal-gtk X
+x11-apps/mesa-progs X
+x11-base/xwayland video_cards_nvidia
+x11-drivers/nvidia-drivers X abi_x86_32 dist-kernel
+x11-libs/cairo X
+x11-libs/gtk+ X
+x11-libs/libxkbcommon X
+
+## novideo
+media-libs/libglvnd abi_x86_32
+x11-libs/libX11 abi_x86_32
+x11-libs/libXext abi_x86_32
+x11-libs/libxcb abi_x86_32
+x11-libs/libXau abi_x86_32
+x11-libs/libXdmcp abi_x86_32
+
+app-admin/doas persist
+app-arch/bzip2 abi_x86_32
+dev-java/openjdk-bin -cups
+dev-lang/rust nightly
+games-simulation/OpenTTD-patches-jgrpp -openmedia
+gui-libs/wlroots X x11-backend vulkan
+gui-wm/hyprland X
+media-fonts/fonts-meta cjk emoji ms
+media-libs/libcanberra alsa
+media-libs/libsndfile minimal
+media-sound/cava sdl
+media-sound/easyeffects -doc
+media-video/ffmpeg mp3 nvenc openh264 opus vaapi vdpau x264
+media-video/pipewire flatpak jack-client pipewire-alsa sound-server
+net-libs/nodejs lto
+net-p2p/transmission gtk appindicator
+net-print/cups-filters -postscript
+sys-boot/refind btrfs
+sys-libs/zlib minizip
+sys-process/htop lm-sensors
+dev-lang/rust-bin rust-analyzer rust-src rustfmt
+media-video/ffmpeg fdk
+media-video/handbrake gtk
+gui-wm/sway tray grimshot wallpapers X
+gui-apps/swaybg gdk-pixbuf
+dev-libs/libxml2 icu
+media-sound/easyeffects calf mda-lv2 zamaudio
+media-plugins/calf lv2
+sys-apps/systemd gnuefi
+dev-python/PyQt5 gui widgets
+media-video/obs-studio v4l nvenc
+media-gfx/inkscape imagemagick
+media-gfx/imagemagick bzip2 cxx openmp png zlib -X corefonts djvu fftw fontconfig fpx graphviz hdri heif jbig jpeg jpeg2kjpegxl lcms lqr lzma opencl openexr q8 q32 raw svg tiff truetype webp wmf xml zip
+media-sound/ncspot ncurses notify clipboard -cover -debug mpris
+
+# inkscape / imagemagick
+media-libs/libheif x265
+media-libs/gd fontconfig truetype
+
+# gimp
+app-text/poppler cairo
+media-libs/gegl cairo
+media-gfx/gimp gnome
+# virt-manager
+app-emulation/libvirt-glib introspection
+sys-libs/libosinfo introspection
+net-dns/dnsmasq script
+app-emulation/virt-manager gui
+net-libs/gtk-vnc introspection
+net-misc/spice-gtk introspection usbredir
+x11-libs/gtksourceview introspection
+x11-libs/vte introspection
+sys-auth/polkit introspection
+media-libs/gstreamer introspection
+
+
+app-emulation/qemu aio bzip2 curl fdt filecaps gnutls jpeg ncurses nls opengl oss pam pin-upstream-blobs png pulseaudio seccomp slirp udev vhost-net vnc xattr fuse gtk iscsi lzo nfs plugins sdl sdl-image spice ssh usb usbredir vde virtfs
+
+# kdeconnect
+dev-qt/qtmultimedia qml
+kde-frameworks/sonnet qml
+kde-frameworks/kconfig qml
+
+# blender
+media-libs/freetype brotli
+media-video/ffmpeg vorbis vpx theora xvid
+app-arch/brotli abi_x86_32
+media-libs/opencolorio -opengl
+dev-qt/qtgui X
+kde-frameworks/kwindowsystem X
+dev-qt/qtcore icu
+
+x11-libs/pango X
+x11-libs/libXft abi_x86_32
+
+net-print/cups abi_x86_32
+
+media-fonts/nerd-fonts 3270 X agave anonymouspro arimo aurulentsansmono bigblueterminal bitstreamverasansmono cascadiacode codenewroman comicshannsmono cousine daddytimemono dejavusansmono droidsansmono fantasquesansmono firacode firamono go-mono gohu hack hasklig heavydata hermit ia-writer ibmplexmono inconsolata inconsolatago inconsolatalgc iosevka iosevkaterm jetbrainsmono lekton liberationmono lilex meslo monofur monoid mononoki mplus nerdfontssymbolsonly noto opendyslexic overpass profont proggyclean robotomono sharetechmono sourcecodepro spacemono terminus tinos ubuntu ubuntumono victormono
+
+gui-apps/waybar mpd mpris network tray experimental evdev jack sndio upower wifi
+dev-cpp/cairomm X
+dev-cpp/gtkmm X
+x11-libs/gtk+ introspection
+app-accessibility/at-spi2-core introspection
+x11-libs/gdk-pixbuf introspection
+x11-libs/pango introspection
+media-libs/harfbuzz introspection
+
+# gamescope
+media-libs/libsdl2 vulkan
+
+#gnom font
+gui-libs/gtk introspection
+gnome-base/gsettings-desktop-schemas introspection
+media-libs/graphene introspection
+
+media-libs/rubberband ladspa
+media-libs/harfbuzz icu
+virtual/opengl abi_x86_32
+
+dev-qt/qtsingleapplication X
+
+
+#hyprland portal
+dev-qt/qtbase eglfs egl opengl
+dev-qt/qtgui eglfs egl opengl
+
+#xfce sracky
+dev-libs/libdbusmenu gtk3
+app-crypt/gcr gtk
+
+## Python
+dev-lang/python pgo lto
+
+## woin
+app-arch/bzip abi_x86_32
+app-arch/lz4 abi_x86_32
+app-arch/zstd abi_x86_32
+app-emulation/wine-staging -gecko -mono
+app-emulation/wine-staging abi_x86_32
+app-text/xmlto text
+dev-lang/orc abi_x86_32
+dev-libs/expat abi_x86_32
+dev-libs/fribidi abi_x86_32
+dev-libs/glib abi_x86_32
+dev-libs/gmp abi_x86_32
+dev-libs/icu abi_x86_32
+dev-libs/libffi abi_x86_32
+dev-libs/libgcrypt abi_x86_32
+dev-libs/libgpg-error abi_x86_32
+dev-libs/libpcre2 abi_x86_32
+dev-libs/libtasn1 abi_x86_32
+dev-libs/libunistring abi_x86_32
+dev-libs/libxml2 abi_x86_32
+dev-libs/lzo abi_x86_32
+dev-libs/nettle abi_x86_32
+dev-libs/wayland abi_x86_32
+media-gfx/graphite2 abi_x86_32
+media-libs/alsa-lib abi_x86_32
+media-libs/fontconfig abi_x86_32
+media-libs/freetype abi_x86_32
+media-libs/glu abi_x86_32
+media-libs/graphene abi_x86_32
+media-libs/gst-plugins-base abi_x86_32
+media-libs/gst-plugins-good abi_x86_32
+media-libs/gstreamer abi_x86_32
+media-libs/harfbuzz abi_x86_32
+media-libs/libjpeg-turbo abi_x86_32
+media-libs/libogg abi_x86_32
+media-libs/libpng abi_x86_32
+media-libs/libpulse abi_x86_32
+media-libs/libsdl2 abi_x86_32
+media-libs/libsdl2 gles2
+media-libs/libsdl2 haptic X
+media-libs/libsndfile abi_x86_32
+media-libs/libva abi_x86_32
+media-libs/libvorbis abi_x86_32
+media-libs/mesa abi_x86_32
+media-libs/vulkan-loader abi_x86_32
+media-plugins/gst-plugins-meta abi_x86_32
+media-plugins/gst-plugins-pulse abi_x86_32
+media-sound/pulseaudio abi_x86_32
+media-video/pipewire abi_x86_32
+net-dns/libidn2 abi_x86_32
+net-libs/gnutls abi_x86_32
+net-libs/libasyncns abi_x86_32
+sys-apps/dbus abi_x86_32
+sys-apps/systemd abi_x86_32
+sys-apps/util-linux abi_x86_32
+sys-devel/llvm abi_x86_32
+sys-libs/libcap abi_x86_32
+sys-libs/libunwind abi_x86_32
+sys-libs/ncurses abi_x86_32
+sys-libs/pam abi_x86_32
+sys-libs/zlib abi_x86_32
+virtual/glu abi_x86_32
+virtual/libiconv abi_x86_32
+virtual/libintl abi_x86_32
+virtual/libudev abi_x86_32
+x11-libs/cairo abi_x86_32
+x11-libs/libXcomposite abi_x86_32
+x11-libs/libXcursor abi_x86_32
+x11-libs/libXfixes abi_x86_32
+x11-libs/libXi abi_x86_32
+x11-libs/libXrandr abi_x86_32
+x11-libs/libXrender abi_x86_32
+x11-libs/libXxf86vm abi_x86_32
+x11-libs/libdrm abi_x86_32
+x11-libs/libvdpau abi_x86_32
+x11-libs/libxkbcommon abi_x86_32
+x11-libs/libxshmfence abi_x86_32
+x11-libs/pango abi_x86_32
+x11-libs/pixman abi_x86_32
+
+
+dev-libs/boost context
+net-libs/mbedtls cmac
+
+# STEM
+media-libs/libglvnd abi_x86_32
+media-libs/mesa abi_x86_32
+media-libs/vulkan-loader abi_x86_32
+
+virtual/opengl abi_x86_32
+
+x11-libs/libX11 abi_x86_32
+x11-libs/libXau abi_x86_32
+x11-libs/libxcb abi_x86_32
+x11-libs/libXdmcp abi_x86_32
+
+# PULLED LIB32 FROM OTHER PACKAGES
+
+# pulled in by media-libs/mesa
+app-arch/zstd abi_x86_32
+dev-libs/expat abi_x86_32
+dev-libs/wayland abi_x86_32
+sys-devel/llvm abi_x86_32
+virtual/libelf abi_x86_32
+x11-libs/libdrm abi_x86_32
+x11-libs/libvdpau abi_x86_32
+x11-libs/libxshmfence abi_x86_32
+x11-libs/libXext abi_x86_32
+x11-libs/libXfixes abi_x86_32
+x11-libs/libXxf86vm abi_x86_32
+
+# pulled in by media-libs/vulkan-loader
+x11-libs/libXrandr abi_x86_32
+x11-libs/libXrender abi_x86_32
+
+# pulled in by sys-devel/llvm
+dev-libs/libffi abi_x86_32
+sys-libs/ncurses abi_x86_32
+sys-libs/zlib abi_x86_32
+
+# pulled in by virtual/libelf
+app-arch/bzip2 abi_x86_32
+dev-libs/elfutils abi_x86_32
