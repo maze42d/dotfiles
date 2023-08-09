@@ -83,6 +83,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'alvan/vim-closetag'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'elkowar/yuck.vim'
+Plug 'mlaursen/vim-react-snippets'
 
 call plug#end()
 
@@ -217,7 +218,8 @@ vmap <leader>cf  <Plug>(coc-format-selected)
 vmap <leader>ca  <Plug>(coc-codeaction-selected)
 nmap <leader>ca  <Plug>(coc-codeaction-selected)
 
-
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
 
 " }}}
 

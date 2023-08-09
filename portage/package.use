@@ -57,7 +57,14 @@ media-video/obs-studio v4l nvenc
 media-gfx/inkscape imagemagick
 media-gfx/imagemagick bzip2 cxx openmp png zlib -X corefonts djvu fftw fontconfig fpx graphviz hdri heif jbig jpeg jpeg2kjpegxl lcms lqr lzma opencl openexr q8 q32 raw svg tiff truetype webp wmf xml zip
 media-sound/ncspot ncurses notify clipboard -cover -debug mpris
+dev-util/xdelta lzma #genshit
+www-client/ungoogled-chromium-bin widevine
 
+
+# x
+x11-libs/libXv abi_x86_32
+net-libs/gnutls pkcs11 tools
+app-crypt/p11-kit abi_x86_32
 # inkscape / imagemagick
 media-libs/libheif x265
 media-libs/gd fontconfig truetype

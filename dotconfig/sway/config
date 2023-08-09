@@ -116,7 +116,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
+exec swaybg -i .config/wallpapers/ace.png
 exec waybar
 exec_always gnome-keyring-daemon -r -d
 exec_always dbus-update-activation-environment --all

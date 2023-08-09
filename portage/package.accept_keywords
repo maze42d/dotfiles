@@ -57,7 +57,10 @@ net-im/element-desktop-bin
 media-video/v4l2loopback
 gui-apps/hyprpicker
 media-gfx/gimp
-
+games-misc/an-anime-game-launcher
+media-sound/musikcube
+x11-wm/i3-rounded
+net-misc/postman-bin
 
 #dev-qt/qtcore
 #dev-qt/qtgui
