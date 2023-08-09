@@ -61,6 +61,7 @@ games-misc/an-anime-game-launcher
 media-sound/musikcube
 x11-wm/i3-rounded
 net-misc/postman-bin
+media-sound/helvum
 
 #dev-qt/qtcore
 #dev-qt/qtgui
