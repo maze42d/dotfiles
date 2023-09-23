@@ -206,7 +206,7 @@ exec_always dbus-update-activation-environment --all
 #exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/novideo.jpg
 #exec_always --no-startup-id feh --bg-fill Documents/grog.png
 #exec_always --no-startup-id feh --bg-fill downloads/hot.png
-exec_always --no-startup-id feh --bg-fill downloads/hen.jpg
+exec_always --no-startup-id feh --bg-fill Downloads/hen.jpg
 #exec_always picom -b -c  --experimental-backend
 # exec_always picom -b -c
 # exec_always --no-startup-id conky -c $HOME/.config/conky/conkyrc
@@ -218,6 +218,7 @@ exec_always --no-startup-id kmonad .config/kmonad/main.kbd
 exec_always --no-startup-id noisetorch -i
 exec_always --no-startup-id deadd-notification-center
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id easyeffects --gapplication-service
 
 bindsym $mod+b exec firefox-bin &>/dev/null
 bindsym $mod+e exec thunar &>/dev/null
@@ -228,6 +229,9 @@ bindsym $mod+c exec code &>/dev/null
 bindsym $mod+y exec alacritty -e /home/maze/.config/i3/kill.sh 
 bindsym $mod+l exec i3lock-fancy-dualmonitor -g 
 
-for_window [class=".*"] border pixel 2
-smart_borders on
+for_window [class=".*"] border pixel 3
+smart_borders no_gaps
 border_radius 5
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #ffffff #285577 #ffffff #2e9ef4   #285577

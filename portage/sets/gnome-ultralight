@@ -1,0 +1,13 @@
+#gnome-base/gvfs
+dev-libs/gjs
+gnome-base/gnome-control-center
+gnome-base/gnome-core-libs
+gnome-base/gnome-session 
+gnome-base/gnome-settings-daemon
+gnome-base/gnome-shell 
+<gui-apps/gnome-console-45_beta
+media-fonts/cantarell
+x11-themes/adwaita-icon-theme
+x11-themes/gnome-backgrounds
+x11-themes/gnome-themes-standard
+x11-wm/mutter

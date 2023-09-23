@@ -56,12 +56,48 @@ gui-libs/xdg-desktop-portal-hyprland
 net-im/element-desktop-bin
 media-video/v4l2loopback
 gui-apps/hyprpicker
-media-gfx/gimp
+~media-gfx/gimp-2.99.16 **
 games-misc/an-anime-game-launcher
 media-sound/musikcube
 x11-wm/i3-rounded
+=x11-misc/sddm-0.20.0::worst-overlay
 net-misc/postman-bin
 media-sound/helvum
+=app-laptop/legion-wmi-9999 **
+=sys-firmware/lenovolegionlinux-9999 **
+=sys-kernel/gentoo-kernel-6.4.10
+=virtual/dist-kernel-6.4.10
+media-libs/nvidia-vaapi-driver
+games-misc/sex
+games-roguelike/tomenet
+kde-plasma/flatpak-kcm
+gui-apps/gradience
+dev-python/material-color-utilities
+dev-python/svglib
+app-misc/onefetch
+
+
+# solargraph ::graaff
+dev-ruby/solargraph
+dev-ruby/backport
+dev-ruby/benchmark
+dev-ruby/language_server-protocol 
+dev-ruby/e2mmap 
+dev-ruby/rubocop-ast 
+dev-ruby/oedipus_lex 
+dev-ruby/ast 
+dev-ruby/reverse_markdown 
+dev-ruby/base64 
+dev-ruby/rubocop 
+dev-ruby/cliver 
+dev-ruby/parser 
+dev-ruby/unicode-display_width 
+dev-ruby/jaro_winkler 
+
+
+=x11-drivers/nvidia-drivers-535.104.05
+=sys-kernel/gentoo-sources-6.5.0
+dev-python/darkdetect
 
 #dev-qt/qtcore
 #dev-qt/qtgui
@@ -76,5 +112,6 @@ dev-python/aiofiles
 dev-python/ajsonrpc 
 dev-python/marshmallow 
 
+gui-apps/gnome-console
 games-emulation/yuzu
 dev-cpp/cpp-jwt

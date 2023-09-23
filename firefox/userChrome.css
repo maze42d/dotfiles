@@ -92,11 +92,11 @@ menuitem.bookmark-item, .bookmark-item, .openintabs-menuitem { /* NOTE: .bookmar
   padding-bottom: 0 !important;
 }
 
-/* border around window */
-html#main-window {
-  border: 2px inset white !important;
-  border-radius: 4px;
-  width: calc(100vw - 4px) !important;
-  height: calc(100vh - 4px) !important;
-}
-
+ /* border around window
+ html#main-window:not([sizemode="fullscreen"]) {
+   border: 2px inset white !important;
+   border-radius: 4px;
+   width: calc(100vw - 4px) !important;
+   height: calc(100vh - 4px) !important;
+ }
+*/

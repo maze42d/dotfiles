@@ -4,7 +4,7 @@
 "position": "top",
 "modules-left":   ["sway/workspaces", "tray", "sway/window"],
 "modules-center": [],
-"modules-right":  ["cpu", "memory", "disk", "custom/cputemp", "custom/gputemp", "custom/fanspeed", "wireplumber", "clock"],
+"modules-right":  ["cpu", "memory", "disk", "wireplumber", "clock"],
 "height": "22px",
 
 "sway/workspaces": {

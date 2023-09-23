@@ -72,11 +72,12 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
-Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'mbbill/undotree'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 Plug 'skammer/vim-css-color'
 Plug 'turbio/bracey.vim'
 Plug 'sheerun/vim-polyglot'
@@ -84,10 +85,18 @@ Plug 'alvan/vim-closetag'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'elkowar/yuck.vim'
 Plug 'mlaursen/vim-react-snippets'
-
+Plug 'ryanoasis/vim-devicons' " nerdtree icons
+Plug 'alessandroyorba/alduin' " theme
+Plug 'justincampbell/vim-eighties' " autoresize
+Plug 'dhruvasagar/vim-zoom'
+Plug 'Yazeed1s/minimal.nvim'
+Plug 'enricobacis/vim-airline-clock'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'goolord/alpha-nvim'
+Plug 'dbridges/vim-markdown-runner'
 call plug#end()
 
-:colorscheme gruvbox 
+:colorscheme habamax
 "  }}}
 
 " keymaps -------------------------------------------{{{
@@ -122,16 +131,19 @@ noremap <c-right> <c-w><
 "toggle nerdtree
 nnoremap 33 :NERDTreeToggle<cr>
 nnoremap 44 :UndotreeToggle<cr>
-nnoremap 11 :Startify<cr>
+nnoremap 11 :lua require'alpha'.setup(require'alpha.themes.startify'.config)<cr>
 
 " coc accept
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
   \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" tab buffers (NOTE: saves)
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
 " }}}
 
-" vimscript -------------------------------------- {{{
 
 "disable autocomment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -146,19 +158,37 @@ augroup END
 :autocmd InsertEnter * set timeoutlen=150
 :autocmd InsertLeave * set timeoutlen=3000
 
+" keep folds
+
+""" augroup remember_folds
+"""   autocmd!
+"""   autocmd BufWinLeave * mkview
+"""   autocmd BufWinEnter * silent! loadview
+""" augroup END
+
 "indent
-let g:indent_guides_guide_size=1
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
+""let g:indent_guides_guide_size=1
+""let g:indent_guides_enable_on_vim_startup=1
+""let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
+
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 "startify
-let g:startify_bookmarks = systemlist("cut -sd' ' -f 2- ~/.NERDTreeBookmarks")
+"""  let g:startify_bookmarks = systemlist("cut -sd' ' -f 2- ~/.NERDTreeBookmarks")
+"""  
+"""  let g:startify_custom_header =
+"""    \ startify#pad(split(system('echo ""'), '\n'))
 
-let g:startify_custom_header =
-  \ startify#pad(split(system('echo ""'), '\n'))
+:lua require'alpha'.setup(require'alpha.themes.startify'.config)
+
+" eighties
+let g:eighties_enabled = 1
+let g:eighties_minimum_width = 90
+let g:eighties_extra_width = 0 " Increase this if you want some extra room
+let g:eighties_compute = 0 " Disable this if you just want the minimum + extra
+let g:eighties_bufname_additional_patterns = ['fugitiveblame'] " Defaults to [], 'fugitiveblame' is only an example. Takes a comma delimited list of bufnames as strings.
 
 
-" }}}
 
 " coc ----------------------------------------------{{{
 
@@ -225,13 +255,14 @@ imap <C-l> <Plug>(coc-snippets-expand)
 
 " status ---------- ------------------------------- {{{
 
-let g:airline_theme='base16_summerfruit_dark'
+let g:airline_theme='deus'
 " air-line
 let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
-endif
+
 
 " unicode symbols
 let g:airline_left_sep = '»'
@@ -245,20 +276,21 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = ' '
-
+let g:airline_symbols.whitespace = ''
 
 
 " airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
+"let g:airline_left_sep = ''
+let g:airline_left_alt_sep = "\uE0bb"
+"let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ' l:'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.colnr = ' c:'
+
+let g:airline_left_sep = "\uE0B4"
+let g:airline_right_sep = "\uE0B6"
+
+
+
+endif
 
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'

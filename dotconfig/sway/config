@@ -3,6 +3,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $term kitty
 
 font pango:monospace 8
 
@@ -26,7 +27,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 floating_modifier $mod
-bindsym $mod+Return exec alacritty msg create-window || alacritty
+bindsym $mod+Return exec $term
 bindsym $mod+x kill
 bindsym $mod+space exec wofi
 
@@ -62,11 +63,11 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: disc"
+set $ws1 "1: work"
 set $ws2 "2: code"
 set $ws3 "3: web"
 set $ws4 "4: term"
-set $ws5 "5: sign"
+set $ws5 "5: mess"
 set $ws6 "6: spot"
 set $ws7 "7: mail"
 set $ws8 "8"
@@ -116,7 +117,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec swaybg -i .config/wallpapers/ace.png
+# terminal layouts
+
+# A B
+# A C
+bindsym $mod+Shift+Return exec ~/.config/sway/1L2R.sh
+
+exec ~/.config/sway/autocat.sh
 exec waybar
 exec_always gnome-keyring-daemon -r -d
 exec_always dbus-update-activation-environment --all

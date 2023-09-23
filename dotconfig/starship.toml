@@ -89,6 +89,7 @@ format = '[ $symbol ($version)]($style)'
 
 [nodejs]
 symbol = ""
+version_format = '$major'
 format = '[ $symbol ($version)]($style)'
 
 [nim]
@@ -115,7 +116,7 @@ disabled = false
 
 [memory_usage]
 disabled = false
-threshold = -1
+threshold = 70
 symbol = ""
 style = "bold cyan"
 format = "$symbol[${ram}( ${swap})]($style) " 

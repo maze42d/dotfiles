@@ -9,7 +9,6 @@ if [[ $TERM == "alacritty" ]]
     nerdfetch
     task
   fi
-
-
 eval "$(starship init zsh)"
+
 # echo "peepee poopoo"

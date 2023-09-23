@@ -1,19 +1,62 @@
+## GN/OME
+app-i18n/ibus introspection X -python
+app-crypt/gcr introspection
+x11-wm/mutter introspection
+net-misc/networkmanager introspection
+net-libs/libnma introspection
+sys-apps/accountsservice introspection
+app-misc/geoclue introspection
+net-libs/libsoup introspection
+sys-power/upower introspection
+gnome-base/librsvg introspection
+gnome-base/gnome-control-center networkmanager
+x11-libs/libnotify introspection
+dev-libs/json-glib introspection
+gui-libs/gtk:4 X
+net-fs/samba client
+sys-apps/xdg-desktop-portal-gnome X
+gnome-extra/evolution-data-server weather -gtk
+gnome-base/gnome-shell ibus
+dev-libs/libgweather introspection
+gnome-base/libgtop introspection
+gnome-base/gnome-menus introspection
+gui-libs/libadwaita introspection
+media-libs/clutter egl introspection X
+dev-libs/atk introspection
+media-libs/cogl introspection gles2
+
+
+dev-java/openjdk-bin source
+
+media-libs/libva-compat egl X
+
+
+app-arch/brotli python
+dev-python/pillow tiff truetype
+media-libs/tiff jpeg
+gnome-base/gnome-desktop introspection
+gui-libs/libhandy introspection
+
 ## x
 app-emulation/wine-staging X
 app-emulation/winetricks gtk
 media-libs/libepoxy X
 media-libs/libglvnd X
-media-libs/mesa vaapi vdpau vulkan X
+media-libs/mesa -vaapi -vdpau -vulkan X
 media-libs/vulkan-loader X
 sys-apps/dbus X
 sys-apps/flatpak X
 sys-apps/xdg-desktop-portal-gtk X
 x11-apps/mesa-progs X
 x11-base/xwayland video_cards_nvidia
-x11-drivers/nvidia-drivers X abi_x86_32 dist-kernel
+x11-drivers/nvidia-drivers kernel-open X abi_x86_32 
 x11-libs/cairo X
 x11-libs/gtk+ X
 x11-libs/libxkbcommon X
+
+## gimp
+media-libs/babl lcms introspection
+media-libs/gegl lcms introspection
 
 ## novideo
 media-libs/libglvnd abi_x86_32
@@ -55,11 +98,25 @@ sys-apps/systemd gnuefi
 dev-python/PyQt5 gui widgets
 media-video/obs-studio v4l nvenc
 media-gfx/inkscape imagemagick
+dev-libs/weston fullscreen -seatd -X
 media-gfx/imagemagick bzip2 cxx openmp png zlib -X corefonts djvu fftw fontconfig fpx graphviz hdri heif jbig jpeg jpeg2kjpegxl lcms lqr lzma opencl openexr q8 q32 raw svg tiff truetype webp wmf xml zip
 media-sound/ncspot ncurses notify clipboard -cover -debug mpris
 dev-util/xdelta lzma #genshit
 www-client/ungoogled-chromium-bin widevine
+sys-firmware/lenovolegionlinux strip systemd legion-acpi legion-tools ryzenadj
+x11-libs/gdk-pixbuf jpeg tiff
 
+x11-apps/mesa-progs gles2
+x11-terms/st savedconfig
+x11-misc/polybar pulseaudio -alsa curl -doc -i3wm ipc mpd network
+sys-kernel/gentoo-sources symlink
+net-misc/networkmanager -connection-sharing -dhclient -gnutls nss -iptables -nftables -resolvconf
+media-fonts/corefonts tahoma
+
+
+# tomenet
+media-libs/sdl-mixer vorbis mp3 smpeg
+app-arch/p7zip wxwidgets
 
 # x
 x11-libs/libXv abi_x86_32
@@ -131,6 +188,33 @@ media-libs/harfbuzz icu
 virtual/opengl abi_x86_32
 
 dev-qt/qtsingleapplication X
+
+# PLASM
+
+app-text/poppler qt5
+
+dev-qt/qtgui jpeg
+dev-qt/qtmultimedia gstreamer
+
+kde-apps/gwenview raw
+kde-apps/kate-addons lspclient
+kde-apps/kio-extras mtp
+kde-apps/okular djvu epub markdown -postscript
+
+kde-frameworks/kconfig qml
+kde-frameworks/kfilemetadata taglib exif pdf epub
+kde-frameworks/kglobalaccel X
+kde-frameworks/kitemmodels qml
+kde-frameworks/knotifications qml
+kde-frameworks/kwindowsystem X
+kde-frameworks/prison qml
+kde-frameworks/sonnet qml
+
+kde-plasma/ksysguard lm-sensors
+kde-plasma/kwin multimedia lock plasma
+kde-plasma/plasma-desktop -kaccounts
+
+media-libs/phonon -vlc
 
 
 #hyprland portal
