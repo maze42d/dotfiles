@@ -23,6 +23,7 @@ dotconfig/*
 !*dotconfig/vkBasalt/
 !*dotconfig/waybar/
 !*dotconfig/zsh.d/
+!*dotconfig/kitty/
 
 **/logs/**
 **/profiler**
