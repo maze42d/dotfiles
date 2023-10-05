@@ -1,5 +1,38 @@
+index 9cf3c41..e3cad69 100644
+--- a/lib/_emerge/JobStatusDisplay.py
++++ b/lib/_emerge/JobStatusDisplay.py
+@@ -126,7 +126,7 @@ class JobStatusDisplay:
+         return True
+ 
+     def _format_msg(self, msg):
+-        return f">>> {msg}"
++        return f":3 {msg}"
+ 
+     def _erase(self):
+         self._write(self._term_codes["carriage_return"] + self._term_codes["clr_eol"])
+diff --git a/lib/_emerge/MergeListItem.py b/lib/_emerge/MergeListItem.py
+index efe485c..cfe5b93 100644
 --- a/lib/_emerge/MergeListItem.py
 +++ b/lib/_emerge/MergeListItem.py
-@@ -61,1 +61,1 @@
+@@ -57,7 +57,7 @@ class MergeListItem(CompositeTask):
+         world_atom = self.world_atom
+         ldpath_mtimes = mtimedb["ldpath"]
+ 
 -        action_desc = "Emerging"
 +        action_desc = "Emerging  "
+         preposition = "for"
+         pkg_color = "PKG_MERGE"
+         if pkg.type_name == "binary":
+diff --git a/lib/_emerge/PackageMerge.py b/lib/_emerge/PackageMerge.py
+index 82725c6..1b61dd1 100644
+--- a/lib/_emerge/PackageMerge.py
++++ b/lib/_emerge/PackageMerge.py
+@@ -67,7 +67,7 @@ class PackageMerge(CompositeTask):
+             preposition = "in"
+             counter_str = ""
+         else:
+-            action_desc = "Completed"
++            action_desc = "Completed "
+             preposition = "to"
+             counter_str = "({} of {}) ".format(
+                 colorize("MERGE_LIST_PROGRESS", str(pkg_count.curval)),
