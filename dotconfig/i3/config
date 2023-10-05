@@ -22,7 +22,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 
 # Use pactl to adjust volume in PulseAudio.
@@ -36,7 +36,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty msg create-window || alacritty
+#bindsym $mod+Return exec alacritty msg create-window || alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+x kill
@@ -190,13 +191,13 @@ assign [class="vivaldi"] $ws3
 assign [class="Signal"] $ws5
 assign [class="Spotify"] $ws6
 
-exec_always --no-startup-id /home/maze/WebCord-3.6.0-x64.AppImage
+#exec_always --no-startup-id /home/maze/WebCord-3.6.0-x64.AppImage
 #exec_always --no-startup-id code
 #exec_always --no-startup-id vivaldi-stable
 
-exec_always --no-startup-id flatpak run org.signal.Signal
+#exec_always --no-startup-id flatpak run org.signal.Signal
 # exec_always --no-startup-id flatpak run com.spotify.Client
-exec --no-startup-id i3-msg 'workspace $ws6; exec flatpak run com.spotify.Client; workspace $ws3'
+#exec --no-startup-id i3-msg 'workspace $ws6; exec flatpak run com.spotify.Client; workspace $ws3'
 
 #exec_always /home/maze/.nvm/versions/node/v18.4.0/bin/node /home/maze/code/lyft-counter/index.js start
 exec_always --no-startup-id polybar
@@ -206,7 +207,7 @@ exec_always dbus-update-activation-environment --all
 #exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/novideo.jpg
 #exec_always --no-startup-id feh --bg-fill Documents/grog.png
 #exec_always --no-startup-id feh --bg-fill downloads/hot.png
-exec_always --no-startup-id feh --bg-fill Downloads/hen.jpg
+#exec_always --no-startup-id feh --bg-fill Downloads/hen.jpg
 #exec_always picom -b -c  --experimental-backend
 # exec_always picom -b -c
 # exec_always --no-startup-id conky -c $HOME/.config/conky/conkyrc
@@ -214,11 +215,11 @@ exec_always --no-startup-id feh --bg-fill Downloads/hen.jpg
 #nopasswd --v
 #exec_always doas logid 
 exec_always --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 
-exec_always --no-startup-id kmonad .config/kmonad/main.kbd
-exec_always --no-startup-id noisetorch -i
-exec_always --no-startup-id deadd-notification-center
+#exec_always --no-startup-id kmonad .config/kmonad/main.kbd
+#exec_always --no-startup-id noisetorch -i
+#exec_always --no-startup-id deadd-notification-center
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id easyeffects --gapplication-service
+#exec --no-startup-id easyeffects --gapplication-service
 
 bindsym $mod+b exec firefox-bin &>/dev/null
 bindsym $mod+e exec thunar &>/dev/null
@@ -231,7 +232,7 @@ bindsym $mod+l exec i3lock-fancy-dualmonitor -g
 
 for_window [class=".*"] border pixel 3
 smart_borders no_gaps
-border_radius 5
+#border_radius 5
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #285577 #ffffff #2e9ef4   #285577
