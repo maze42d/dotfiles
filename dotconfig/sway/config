@@ -129,6 +129,7 @@ exec_always gnome-keyring-daemon -r -d
 exec_always dbus-update-activation-environment --all
 exec_always --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 
 bindsym $mod+b exec firefox-bin &>/dev/null
 bindsym $mod+e exec thunar &>/dev/null
