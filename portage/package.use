@@ -79,7 +79,7 @@ media-libs/libsndfile minimal
 media-sound/cava sdl
 media-sound/easyeffects -doc
 media-video/ffmpeg mp3 nvenc openh264 opus vaapi vdpau x264
-media-video/pipewire flatpak jack-client pipewire-alsa sound-server
+media-video/pipewire flatpak jack-client pipewire-alsa sound-server X extra v4l
 net-libs/nodejs lto
 net-p2p/transmission gtk appindicator
 net-print/cups-filters -postscript
@@ -96,7 +96,7 @@ media-sound/easyeffects calf mda-lv2 zamaudio
 media-plugins/calf lv2
 sys-apps/systemd gnuefi
 dev-python/PyQt5 gui widgets
-media-video/obs-studio v4l nvenc
+media-video/obs-studio v4l nvenc truetype
 media-gfx/inkscape imagemagick
 dev-libs/weston fullscreen -seatd -X
 media-gfx/imagemagick bzip2 cxx openmp png zlib -X corefonts djvu fftw fontconfig fpx graphviz hdri heif jbig jpeg jpeg2kjpegxl lcms lqr lzma opencl openexr q8 q32 raw svg tiff truetype webp wmf xml zip
@@ -105,6 +105,9 @@ dev-util/xdelta lzma #genshit
 www-client/ungoogled-chromium-bin widevine
 sys-firmware/lenovolegionlinux strip systemd legion-acpi legion-tools ryzenadj
 x11-libs/gdk-pixbuf jpeg tiff
+www-client/vivaldi proprietary-codecs widevine
+media-video/vlc X dbus dvbpsi encode ffmpeg gcrypt gui libsamplerate ncurses pulseaudio ssl udev wayland bluray dts dvd flac fluidsynth jpeg libass libnotify libtar live matroska mp3 mpeg mtp nfs ogg opus png sdl-image skins svg -truetype v4l vaapi vdpau vpx x264 x265 truetype xml
+app-containers/docker btrfs 
 
 x11-apps/mesa-progs gles2
 x11-terms/st savedconfig
@@ -176,7 +179,7 @@ x11-libs/pango introspection
 media-libs/harfbuzz introspection
 
 # gamescope
-media-libs/libsdl2 vulkan
+media-libs/libsdl2 X vulkan
 
 #gnom font
 gui-libs/gtk introspection
@@ -267,7 +270,7 @@ media-libs/libpng abi_x86_32
 media-libs/libpulse abi_x86_32
 media-libs/libsdl2 abi_x86_32
 media-libs/libsdl2 gles2
-media-libs/libsdl2 haptic X
+media-libs/libsdl2 haptic #X #issue later?
 media-libs/libsndfile abi_x86_32
 media-libs/libva abi_x86_32
 media-libs/libvorbis abi_x86_32
@@ -307,7 +310,7 @@ x11-libs/libxkbcommon abi_x86_32
 x11-libs/libxshmfence abi_x86_32
 x11-libs/pango abi_x86_32
 x11-libs/pixman abi_x86_32
-
+x11-base/xwayland libei
 
 dev-libs/boost context
 net-libs/mbedtls cmac

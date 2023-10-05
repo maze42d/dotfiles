@@ -24,6 +24,15 @@ app-misc/nerdfetch
 media-fonts/ubuntumono-nerdfont
 media-fonts/jetbrainsmono-nerdfont
 
+media-video/vlc
+gui-apps/xwaylandvideobridge
+net-vpn/tailscale
+app-misc/macchina
+sys-apps/xdg-desktop-portal
+app-eselect/eselect-dotnet
+dev-cpp/sdbus-c++
+dev-libs/libei
+dev-dotnet/dotnet-runtime-nugets
 app-editors/neovide
 app-vim/rust-vim
 dev-dotnet/dotnet-sdk-bin
@@ -33,6 +42,7 @@ dev-util/premake
 games-arcade/osu-lazer
 games-strategy/0ad
 games-util/game-device-udev-rules
+x11-base/xwayland
 games-util/steam-launcher
 gui-apps/cliphist
 gui-apps/nwg-look
