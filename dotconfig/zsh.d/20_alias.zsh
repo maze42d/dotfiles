@@ -37,7 +37,8 @@ alias gs="git status"
 alias l="exa --all --long --octal-permissions --time-style=long-iso  --git --group --color-scale  --header --icons"
 alias ltree="exa --all --long --octal-permissions --time-style=long-iso  --git --group --color-scale  --header --icons --tree -L 3"
 alias min="cd ~/min && npm run start"
-alias nano="vim"
+#alias nano="vim"
+alias nbim="nvim"
 alias nvm-save='node -v > .nvmrc'
 alias pacman-outplay="doas rm -f /var/lib/pacman/db.lck"
 alias pm="pulsemixer"
@@ -59,7 +60,7 @@ alias wcount="wc -w"
 alias wireshark-usbcapture="doas modprobe usbmon && doas chmod 777 /dev/usbmon*"
 alias wlcb="wlc -b"
 alias x11vnc="x11vnc -rfbauth ~/.vnc/passwd"
-
+alias ily="echo 'i love you too maze <3'"
 
 alias -s js=node
 alias -s ts=nvim
