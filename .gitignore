@@ -24,6 +24,7 @@ dotconfig/*
 !*dotconfig/waybar/
 !*dotconfig/zsh.d/
 !*dotconfig/kitty/
+!*wofi-scripts/
 
 **/logs/**
 **/profiler**
