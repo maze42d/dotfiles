@@ -17,6 +17,7 @@ input "1133:49166:Logitech_USB-PS/2_Optical_Mouse" {
     calibration_matrix 2 0 0 0 2 0
 }
 
+
 #assign [app_id=firefox] ws3
 
 # Pulse volume bind
@@ -47,7 +48,8 @@ bindsym $mod+v split v
 
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
+bindsym $mod+s exec ruby ~/dotfiles.git/wofi-scripts/swayscreen.rb
 bindsym $mod+w layout tabbed
 
 bindsym $mod+Alt+space floating toggle
