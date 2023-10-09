@@ -2,6 +2,7 @@ format = """
 $username@\
 $hostname\
 $directory\
+$time\
 $c\
 $elixir\
 $elm\
@@ -13,7 +14,6 @@ $nodejs\
 $nim\
 $rust\
 $docker_context\
-$time\
 $memory_usage\
 $git_branch\
 $git_status\
@@ -27,17 +27,17 @@ $character\
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-format = '[$user]($style)'
+format = '[\[ ](bold 207)[$user]($style)'
 
 [directory]
-format = "[$path]($style)"
+format = " [$path](177)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [character]
-success_symbol = "[❯](green)"
-error_symbol = "[grr](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[:❯](green)"
+error_symbol = "[ ╯°□°╯︵ ┻━┻](red)"
+vimcmd_symbol = "[Vi ](bold green)"
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
@@ -103,7 +103,7 @@ format = '[ $symbol ($version)]($style)'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-format = '[ ♥ $time ]($style)'
+format = '[ ♥ $time ](7)[\]](bold 207) [:: ILYL](243)'
 
 [hostname]
 ssh_only = false
