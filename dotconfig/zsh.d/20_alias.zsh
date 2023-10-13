@@ -39,6 +39,7 @@ alias ltree="exa --all --long --octal-permissions --time-style=long-iso  --git -
 alias min="cd ~/min && npm run start"
 #alias nano="vim"
 alias nbim="nvim"
+alias nviom="nvim"
 alias nvm-save='node -v > .nvmrc'
 alias pacman-outplay="doas rm -f /var/lib/pacman/db.lck"
 alias pm="pulsemixer"
