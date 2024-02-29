@@ -1,0 +1,7 @@
+[Unit]
+Description=test job
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/bin/bash ryzenadj -i >> /tmp/ryzenadj_dump

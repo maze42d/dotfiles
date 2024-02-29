@@ -1,5 +1,7 @@
 options = {
   "Selection [COPY]" => 'grim -g "$(slurp)" - | wl-copy',
+  "Selection [COPY] (wait 5s)" => 'grim -g "$(slurp; sleep 5)" - | wl-copy',
+  "Selection [COPY] (wait 5s & wait 5s after)" => 'grim -g "$(sleep 5; slurp; sleep 5)" - | wl-copy',
   "Selection [SAVE]" => 'grim -g "$(slurp)" - >> ~/screenshots/screen_$(date +%y-%b-%d_%k-%M-%S).png',
   "Fullscreen [SAVE]" => 'grim - >> ~/screenshots/screen_$(date +%y-%b-%d_%k-%M-%S).png'
 }
@@ -8,6 +10,8 @@ opt_string = ""
 options.each do |k, v|
   opt_string += k + "\n"
 end
+
+opt_string.slice!((opt_string.length - 1))
 
 dmenu = `echo "#{opt_string}" | wofi --dmenu`
 dmenu = dmenu.split("\n")

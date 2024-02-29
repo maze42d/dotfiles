@@ -1,6 +1,7 @@
 ## GN/OME
 app-i18n/ibus introspection X -python
 app-crypt/gcr introspection
+app-misc/ddcutil drm user-permissions
 x11-wm/mutter introspection
 net-misc/networkmanager introspection
 net-libs/libnma introspection
@@ -8,6 +9,7 @@ sys-apps/accountsservice introspection
 app-misc/geoclue introspection
 net-libs/libsoup introspection
 sys-power/upower introspection
+gnome-base/gvfs mtp udisks
 gnome-base/librsvg introspection
 gnome-base/gnome-control-center networkmanager
 x11-libs/libnotify introspection
@@ -24,7 +26,7 @@ gui-libs/libadwaita introspection
 media-libs/clutter egl introspection X
 dev-libs/atk introspection
 media-libs/cogl introspection gles2
-
+app-misc/ddccontrol gtk
 
 dev-java/openjdk-bin source
 
@@ -49,10 +51,16 @@ sys-apps/flatpak X
 sys-apps/xdg-desktop-portal-gtk X
 x11-apps/mesa-progs X
 x11-base/xwayland video_cards_nvidia
-x11-drivers/nvidia-drivers kernel-open X abi_x86_32 
+x11-drivers/nvidia-drivers X abi_x86_32 #kernel-open 
 x11-libs/cairo X
 x11-libs/gtk+ X
 x11-libs/libxkbcommon X
+sys-boot/grub truetype
+x11-libs/libfm automount gtk exif udisks
+media-libs/vulkan-loader layers
+media-libs/vulkan-layers abi_x86_32
+dev-util/spirv-tools abi_x86_32
+dev-util/glslang abi_x86_32
 
 ## gimp
 media-libs/babl lcms introspection
@@ -98,18 +106,23 @@ sys-apps/systemd gnuefi
 dev-python/PyQt5 gui widgets
 media-video/obs-studio v4l nvenc truetype
 media-gfx/inkscape imagemagick
+dev-libs/xmlsec nss
 dev-libs/weston fullscreen -seatd -X
 media-gfx/imagemagick bzip2 cxx openmp png zlib -X corefonts djvu fftw fontconfig fpx graphviz hdri heif jbig jpeg jpeg2kjpegxl lcms lqr lzma opencl openexr q8 q32 raw svg tiff truetype webp wmf xml zip
 media-sound/ncspot ncurses notify clipboard -cover -debug mpris
 dev-util/xdelta lzma #genshit
 www-client/ungoogled-chromium-bin widevine
-sys-firmware/lenovolegionlinux strip systemd legion-acpi legion-tools ryzenadj
+sys-firmware/lenovolegionlinux strip systemd legion-acpi legion-tools ryzenadj gui
 x11-libs/gdk-pixbuf jpeg tiff
 www-client/vivaldi proprietary-codecs widevine
-media-video/vlc X dbus dvbpsi encode ffmpeg gcrypt gui libsamplerate ncurses pulseaudio ssl udev wayland bluray dts dvd flac fluidsynth jpeg libass libnotify libtar live matroska mp3 mpeg mtp nfs ogg opus png sdl-image skins svg -truetype v4l vaapi vdpau vpx x264 x265 truetype xml
 app-containers/docker btrfs 
-
+media-libs/glfw wayland-only abi_x86_32
+dev-util/vulkan-utility-libraries abi_x86_32
+x11-libs/xcb-util-keysyms abi_x86_32
 x11-apps/mesa-progs gles2
+app-misc/fastfetch ddcutil drm imagemagick networkmanager nvidia-gpu opencl pci vulkan
+
+
 x11-terms/st savedconfig
 x11-misc/polybar pulseaudio -alsa curl -doc -i3wm ipc mpd network
 sys-kernel/gentoo-sources symlink
@@ -218,6 +231,9 @@ kde-plasma/kwin multimedia lock plasma
 kde-plasma/plasma-desktop -kaccounts
 
 media-libs/phonon -vlc
+media-gfx/imv X freeimage wayland gif heif icu jpeg png svg tiff
+x11-misc/gammastep wayland appindicator gtk
+dev-libs/libpcre2 pcre32
 
 
 #hyprland portal

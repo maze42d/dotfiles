@@ -3,7 +3,9 @@ options = {
   "Service: libvirt stop" => 'pkexec systemctl stop libvirtd',
   "Wireshark: USB monitor enable" => 'pkexec zsh -c "modprobe usbmon; chmod 777 /dev/usbmon*"',
   "Wireshark: USB monitor disable" => 'pkexec zsh -c "rmmod usbmon"',
-  "Pulsemixer" => 'kitty pulsemixer',
+  "PM_ Pulsemixer" => 'kitty pulsemixer',
+  "1_ KB Layout: Toggle" => 'swaymsg "input type:keyboard xkb_switch_layout next"',
+  "0_ Power: Set powerlimits (cpu, gpu)" => 'pkexec "/home/maze/dotfiles.git/wofi-scripts/infernobegone.sh"',
 
 }
 

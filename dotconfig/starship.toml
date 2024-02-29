@@ -103,7 +103,7 @@ format = '[ $symbol ($version)]($style)'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-format = '[ ♥ $time ](7)[\]](bold 207) [:: ILYL](243)'
+format = '[ ♥ $time ](7)[\]](bold 207) '
 
 [hostname]
 ssh_only = false
@@ -119,5 +119,5 @@ disabled = false
 threshold = 70
 symbol = ""
 style = "bold cyan"
-format = "$symbol[${ram}( ${swap})]($style) " 
+format = " $symbol[${ram}( ${swap})]($style) " 
 

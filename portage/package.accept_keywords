@@ -1,10 +1,18 @@
 =app-emulation/wine-staging-8.8 
 
+=sys-kernel/rt-sources-6.5.2_p8
+=sys-kernel/gentoo-sources-6.6.0
+
+<=x11-drivers/nvidia-drivers-530
+
+
 # hypr
 dev-libs/hyprland-protocols
 dev-libs/libliftoff
 gui-apps/hyprpaper
 gui-apps/gtklock
+
+=app-misc/ddcutil-1.4.5
 
 media-video/obs-studio
 
@@ -24,7 +32,13 @@ app-misc/nerdfetch
 media-fonts/ubuntumono-nerdfont
 media-fonts/jetbrainsmono-nerdfont
 
-media-video/vlc
+
+dev-libs/yyjson
+app-misc/fastfetch
+app-misc/piper
+dev-libs/libratbag
+dev-ruby/*
+#media-video/vlc
 gui-apps/xwaylandvideobridge
 net-vpn/tailscale
 app-misc/macchina
@@ -85,7 +99,12 @@ gui-apps/gradience
 dev-python/material-color-utilities
 dev-python/svglib
 app-misc/onefetch
-
+x11-misc/pcmanfm
+x11-libs/libfm
+games-util/vkbasalt
+app-misc/ddccontrol
+app-misc/ddccontrol-db
+dev-libs/hyprlang
 
 # solargraph ::graaff
 dev-ruby/solargraph
@@ -105,7 +124,6 @@ dev-ruby/unicode-display_width
 dev-ruby/jaro_winkler 
 
 
-=x11-drivers/nvidia-drivers-535.104.05
 =sys-kernel/gentoo-sources-6.5.0
 dev-python/darkdetect
 
@@ -125,3 +143,7 @@ dev-python/marshmallow
 gui-apps/gnome-console
 games-emulation/yuzu
 dev-cpp/cpp-jwt
+
+sys-kernel/zenpower3
+
+sys-power/amdctl

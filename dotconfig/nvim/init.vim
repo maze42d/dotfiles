@@ -5,6 +5,7 @@
 " base ----------------------- {{{
 
 set nocompatible
+set hidden
 filetype on
 filetype plugin on
 filetype indent on
@@ -77,7 +78,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'mbbill/undotree'
-"Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 Plug 'skammer/vim-css-color'
 Plug 'turbio/bracey.vim'
 Plug 'sheerun/vim-polyglot'
@@ -94,6 +95,7 @@ Plug 'enricobacis/vim-airline-clock'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'goolord/alpha-nvim'
 Plug 'dbridges/vim-markdown-runner'
+Plug 'leafOfTree/vim-svelte-plugin'
 call plug#end()
 
 :colorscheme habamax
@@ -183,7 +185,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " eighties
 let g:eighties_enabled = 1
-let g:eighties_minimum_width = 90
+let g:eighties_minimum_width = 20
 let g:eighties_extra_width = 0 " Increase this if you want some extra room
 let g:eighties_compute = 0 " Disable this if you just want the minimum + extra
 let g:eighties_bufname_additional_patterns = ['fugitiveblame'] " Defaults to [], 'fugitiveblame' is only an example. Takes a comma delimited list of bufnames as strings.
@@ -191,6 +193,8 @@ let g:eighties_bufname_additional_patterns = ['fugitiveblame'] " Defaults to [],
 
 
 " coc ----------------------------------------------{{{
+
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 " https://github.com/neoclide/coc.nvim#example-vim-configuration
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -213,7 +217,7 @@ function! s:show_documentation()
   if &filetype == 'vim'
     execute 'h '.expand('<cword>')
   else
-    call CocAction('doHover')
+    call CocActionAsync('doHover')
   endif
 endfunction
 
@@ -293,7 +297,7 @@ let g:airline_right_sep = "\uE0B6"
 endif
 
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = 'jsformatter'
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1

@@ -11,12 +11,14 @@ gaps inner 5
 gaps outer 0
 
 
-input "1133:49166:Logitech_USB-PS/2_Optical_Mouse" {
+input "*" {
     accel_profile flat
-    pointer_accel 1
-    calibration_matrix 2 0 0 0 2 0
+    pointer_accel 0.2
 }
 
+input type:keyboard {
+    xkb_layout us,cz(qwerty)
+}
 
 
 #assign [app_id=firefox] ws3
@@ -127,20 +129,26 @@ bindsym $mod+r mode "resize"
 # A C
 bindsym $mod+Shift+Return exec ~/.config/sway/1L2R.sh
 
-exec ~/.config/sway/autocat.sh
+# exec /proj/autocat/autocat
 exec waybar
 exec_always gnome-keyring-daemon -r -d
+exec_always doas tankmount
 exec_always dbus-update-activation-environment --all
 exec_always --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+exec mako
+exec_always swaybg -i /home/maze/.config/wallpapers/xenia.png
+
 
 bindsym $mod+b exec firefox-bin &>/dev/null
-bindsym $mod+e exec thunar &>/dev/null
+bindsym $mod+Shift+b exec /opt/firefox-dev/firefox &>/dev/null
+bindsym $mod+e exec pcmanfm &>/dev/null
 bindsym $mod+c exec zenity --info --text "$(hyprpicker)"
-
+bindsym Control+Shift+Escape exec kitty "btop"
 
 for_window [title=".*"] border pixel 2
+for_window [title="^mazekit"] floating enable
 smart_borders on
 
 # # swayfx

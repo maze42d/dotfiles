@@ -10,7 +10,7 @@ function expand-or-complete-or-list-files() {
 }
 zle -N expand-or-complete-or-list-files
 
-source $HOME/.config/zsh.d/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#source $HOME/.config/zsh.d/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # _complete_files () {
 #   eval "$_comp_setup"

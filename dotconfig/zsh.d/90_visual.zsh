@@ -11,4 +11,6 @@ if [[ $TERM == "alacritty" ]]
   fi
 eval "$(starship init zsh)"
 
+setopt transientrprompt interactivecomments # zsh-autocomplete segfault fix?
+
 # echo "peepee poopoo"

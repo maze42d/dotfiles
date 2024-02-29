@@ -1,9 +1,5 @@
-- 1.1.8
+- 1.1.9
 - _NAME: MX Master 3 Wireless Mouse
-  _absent: [hi-res-scroll, lowres-scroll-mode, onboard_profiles, report_rate, pointer_speed, speed-change, backlight, backlight-timed, fn-swap, persistent-remappable-keys,
-    disable-keyboard-keys, crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, gesture2-gestures, gesture2-divert, gesture2-params,
-    sidetone, equalizer]
-  _battery: 4096
   _modelId: B02340820000
   _sensitive: {scroll-ratchet: true, smart-shift: true}
   _serial: 02A0A027
@@ -20,3 +16,15 @@
   smart-shift: 5
   thumb-scroll-invert: false
   thumb-scroll-mode: false
+- _NAME: G502 SE Hero Gaming Mouse
+  _absent: [hi-res-scroll, lowres-scroll-mode, hires-smooth-invert, hires-smooth-resolution, hires-scroll-mode, scroll-ratchet, smart-shift, thumb-scroll-invert,
+    thumb-scroll-mode, pointer_speed, speed-change, backlight, backlight-timed, fn-swap, reprogrammable-keys, persistent-remappable-keys, divert-keys, disable-keyboard-keys,
+    crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, change-host, gesture2-gestures, gesture2-divert, gesture2-params, sidetone,
+    equalizer, adc_power_management]
+  _battery: 0
+  _modelId: C08B00000000
+  _sensitive: {report_rate: true}
+  _unitId: '32394716'
+  dpi: 4000
+  onboard_profiles: 1
+  report_rate: 1

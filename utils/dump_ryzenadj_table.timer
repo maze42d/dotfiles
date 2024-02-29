@@ -1,0 +1,9 @@
+[Unit]
+Description=Gib ryzenadj table pls
+
+[Timer]
+OnBootSec=5s
+OnUnitActiveSec=5s
+
+[Install]
+WantedBy=timers.target

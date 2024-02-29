@@ -1,0 +1,116 @@
+commit c1c573987791d80ebd9c82f6cf265c087f4aebf5
+Author: Erik Kurzinger <ekurzinger@nvidia.com>
+Date:   Mon Jul 24 15:24:28 2023 -0700
+
+    Add drmSyncobjImport/ExportSyncFileTimeline
+    
+    Signed-off-by: Erik Kurzinger <ekurzinger@nvidia.com>
+
+diff --git a/core-symbols.txt b/core-symbols.txt
+index 0d3464e9..47b9bb8d 100644
+--- a/core-symbols.txt
++++ b/core-symbols.txt
+@@ -189,9 +189,11 @@ drmSyncobjCreate
+ drmSyncobjDestroy
+ drmSyncobjEventfd
+ drmSyncobjExportSyncFile
++drmSyncobjExportSyncFileTimeline
+ drmSyncobjFDToHandle
+ drmSyncobjHandleToFD
+ drmSyncobjImportSyncFile
++drmSyncobjImportSyncFileTimeline
+ drmSyncobjQuery
+ drmSyncobjQuery2
+ drmSyncobjReset
+diff --git a/include/drm/drm.h b/include/drm/drm.h
+index 78805ad0..f396ac4e 100644
+--- a/include/drm/drm.h
++++ b/include/drm/drm.h
+@@ -878,6 +878,13 @@ struct drm_syncobj_transfer {
+ 	__u32 pad;
+ };
+ 
++struct drm_syncobj_sync_file {
++	__u32 handle;
++	__u32 fd;
++	__u64 point;
++};
++
++
+ #define DRM_SYNCOBJ_WAIT_FLAGS_WAIT_ALL (1 << 0)
+ #define DRM_SYNCOBJ_WAIT_FLAGS_WAIT_FOR_SUBMIT (1 << 1)
+ #define DRM_SYNCOBJ_WAIT_FLAGS_WAIT_AVAILABLE (1 << 2) /* wait for time point to become available */
+@@ -1185,6 +1192,8 @@ extern "C" {
+ #define DRM_IOCTL_MODE_GETFB2		DRM_IOWR(0xCE, struct drm_mode_fb_cmd2)
+ 
+ #define DRM_IOCTL_SYNCOBJ_EVENTFD	DRM_IOWR(0xCF, struct drm_syncobj_eventfd)
++#define DRM_IOCTL_SYNCOBJ_IMPORT_SYNC_FILE	DRM_IOWR(0xD0, struct drm_syncobj_sync_file)
++#define DRM_IOCTL_SYNCOBJ_EXPORT_SYNC_FILE	DRM_IOWR(0xD1, struct drm_syncobj_sync_file)
+ 
+ /*
+  * Device specific ioctls should only be in their respective headers
+diff --git a/xf86drm.c b/xf86drm.c
+index 52b83ccc..67a5063e 100644
+--- a/xf86drm.c
++++ b/xf86drm.c
+@@ -4931,6 +4931,19 @@ drm_public int drmSyncobjFDToHandle(int fd, int obj_fd, uint32_t *handle)
+     return 0;
+ }
+ 
++drm_public int drmSyncobjImportSyncFileTimeline(int fd, uint32_t handle,
++                                                uint64_t point,
++                                                int sync_file_fd)
++{
++    struct drm_syncobj_sync_file args;
++
++    memclear(args);
++    args.fd = sync_file_fd;
++    args.handle = handle;
++    args.point = point;
++    return drmIoctl(fd, DRM_IOCTL_SYNCOBJ_IMPORT_SYNC_FILE, &args);
++}
++
+ drm_public int drmSyncobjImportSyncFile(int fd, uint32_t handle,
+                                         int sync_file_fd)
+ {
+@@ -4943,6 +4956,24 @@ drm_public int drmSyncobjImportSyncFile(int fd, uint32_t handle,
+     return drmIoctl(fd, DRM_IOCTL_SYNCOBJ_FD_TO_HANDLE, &args);
+ }
+ 
++drm_public int drmSyncobjExportSyncFileTimeline(int fd, uint32_t handle,
++                                                uint64_t point,
++                                                int *sync_file_fd)
++{
++    struct drm_syncobj_sync_file args;
++    int ret;
++
++    memclear(args);
++    args.fd = -1;
++    args.handle = handle;
++    args.point = point;
++    ret = drmIoctl(fd, DRM_IOCTL_SYNCOBJ_EXPORT_SYNC_FILE, &args);
++    if (ret)
++        return ret;
++    *sync_file_fd = args.fd;
++    return 0;
++}
++
+ drm_public int drmSyncobjExportSyncFile(int fd, uint32_t handle,
+                                         int *sync_file_fd)
+ {
+diff --git a/xf86drm.h b/xf86drm.h
+index 1c38cb18..75411c0d 100644
+--- a/xf86drm.h
++++ b/xf86drm.h
+@@ -927,7 +927,11 @@ extern int drmSyncobjHandleToFD(int fd, uint32_t handle, int *obj_fd);
+ extern int drmSyncobjFDToHandle(int fd, int obj_fd, uint32_t *handle);
+ 
+ extern int drmSyncobjImportSyncFile(int fd, uint32_t handle, int sync_file_fd);
++extern int drmSyncobjImportSyncFileTimeline(int fd, uint32_t handle,
++                                            uint64_t point, int sync_file_fd);
+ extern int drmSyncobjExportSyncFile(int fd, uint32_t handle, int *sync_file_fd);
++extern int drmSyncobjExportSyncFileTimeline(int fd, uint32_t handle,
++                                            uint64_t point, int *sync_file_fd);
+ extern int drmSyncobjWait(int fd, uint32_t *handles, unsigned num_handles,
+ 			  int64_t timeout_nsec, unsigned flags,
+ 			  uint32_t *first_signaled);

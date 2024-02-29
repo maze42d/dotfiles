@@ -1,0 +1,8 @@
+{
+  "html": 
+  {
+    "filetypes": ["html","handlebars","htmldjango","blade", "ejs"],
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+  "svelte.enable-ts-plugin": true
+}

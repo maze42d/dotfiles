@@ -1,5 +1,7 @@
+
 #alias emerge="doas emerge --ask --quiet-build"
 #alias f="kill -9 $(xprop | grep WM_PID | awk '{print $3}')"
+#alias nano="vim"
 #alias paldopici="rm"
 #alias reboot="loginctl reboot"
 #alias rm="echo ne"
@@ -12,7 +14,6 @@ alias :qa="killall alacritty"
 alias accept=""
 alias ayy="yay"
 alias brightset="xrandr --output DP-2 --brightness"
-alias c="cd \$(history -100 | grep '^ [[:digit:]]\+ \+cd' | awk -F 'cd' '{print \$2}' | tail -n 1)"
 alias cputurbooff='echo "0" | doas tee /sys/devices/system/cpu/cpufreq/boost'
 alias cputurboon='echo "1" | doas tee /sys/devices/system/cpu/cpufreq/boost'
 alias cz="setxkbmap -layout cz -variant qwerty"
@@ -34,14 +35,15 @@ alias gc="git commit -m"
 alias gd="git diff"
 alias gp="git push"
 alias gs="git status"
+alias ily="echo 'i love you too maze <3'"
 alias l="exa --all --long --octal-permissions --time-style=long-iso  --git --group --color-scale  --header --icons"
 alias ltree="exa --all --long --octal-permissions --time-style=long-iso  --git --group --color-scale  --header --icons --tree -L 3"
 alias min="cd ~/min && npm run start"
-#alias nano="vim"
 alias nbim="nvim"
 alias nviom="nvim"
 alias nvm-save='node -v > .nvmrc'
 alias pacman-outplay="doas rm -f /var/lib/pacman/db.lck"
+alias please="doas"
 alias pm="pulsemixer"
 alias qemu-enable="doas systemctl start libvirtd"
 alias se="doas systemctl enable"
@@ -61,7 +63,9 @@ alias wcount="wc -w"
 alias wireshark-usbcapture="doas modprobe usbmon && doas chmod 777 /dev/usbmon*"
 alias wlcb="wlc -b"
 alias x11vnc="x11vnc -rfbauth ~/.vnc/passwd"
-alias ily="echo 'i love you too maze <3'"
+alias yrd="yarn run dev"
+alias yrb="yarn run build"
+alias yrt="yarn run test"
 
 alias -s js=node
 alias -s ts=nvim
